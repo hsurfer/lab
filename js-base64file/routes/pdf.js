@@ -3,6 +3,11 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function (req, res, next) {
+   //este request debe ser post
+   //se debe validar el digest
+   //
+
+
    //console.log("Got a GET request for the homepage");
    //res.send('Hello GET');
    res.writeHead(200, {
