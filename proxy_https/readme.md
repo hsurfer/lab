@@ -1,4 +1,5 @@
-#Conexión a servidor SSL mediante ghostunnel
+Conexión a servidor SSL mediante ghostunnel
+==========================================
 Pasos para ejecutar prueba de concepto
 
 1.Descargar imagen de un centos antiguo
@@ -18,7 +19,8 @@ La imagen de producción es un Red Hat Enterprise Linux Server release 5.3 (Tika
 5.En otro terminal probar conexión en el mismo contenedor
 'bash-3.2# curl -v --header "Host: reqres.in" -X GET "http://127.0.0.1:8080/api/users\?page\=2"
 
-#Configuración en Servidor real
+Configuración en Servidor real
+==============================
 Pasos para configurar servidor definitivo. Se debe agregar los archivos binarios en el servidor que ejecutará el tunnel.
 1.Descargar la aplicación en la ruta ejecutable, agregar el servicio
 '''
