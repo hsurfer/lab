@@ -1,4 +1,5 @@
 #Conexión a servidor SSL mediante ghostunnel
+Pasos para ejecutar prueba de concepto
 
 1.Descargar imagen de un centos antiguo
 'docker pull gpmidi/centos-5.3
@@ -16,4 +17,18 @@ La imagen de producción es un Red Hat Enterprise Linux Server release 5.3 (Tika
 
 5.En otro terminal probar conexión en el mismo contenedor
 'bash-3.2# curl -v --header "Host: reqres.in" -X GET "http://127.0.0.1:8080/api/users\?page\=2"
+
+#Configuración en Servidor real
+Pasos para configurar servidor definitivo. Se debe agregar los archivos binarios en el servidor que ejecutará el tunnel.
+1.Descargar la aplicación en la ruta ejecutable, agregar el servicio
+'''
+wget https://github.com/ghostunnel/ghostunnel/releases/download/v1.5.3/ghostunnel-v1.5.3-linux-amd64-with-pkcs11
+cp ghostunnel-v1.5.3-linux-amd64-with-pkcs11 /usr/bin/
+chmod +x /usr/bin/ghostunnel-v1.5.3-linux-amd64-with-pkcs11
+cp ./chkconfig/ghostunnel /etc/init.d/
+chmod +x /etc/init.d/ghostunnel
+chkconfig --add ghostunnel
+chkconfig --level 2345 ghostunnel on
+service ghostunnel start
+'''
 
