@@ -18,11 +18,11 @@ $ docker run -it -v ~/src/github/lab/proxy_https:/root gpmidi/centos-5.3 bash
 4. Iniciar tunnel dentro del contenedor
 ```sh
 $ cd /root
-$ bash-3.2# ./ghostunnel-v1.5.3-linux-amd64-with-pkcs11 client --listen=127.0.0.1:8843 --target=reqres.in:443 --override-server-name=reqres.in  --unsafe-listen --disable-authentication
+$ bash-3.2# ./ghostunnel-v1.5.3-linux-amd64-with-pkcs11 client --listen=127.0.0.1:8080 --target=reqres.in:443 --override-server-name=reqres.in  --unsafe-listen --disable-authentication
 ```
 5. En otro terminal probar conexión en el mismo contenedor
 ```sh
-$ curl -v --header "Host: reqres.in" -X GET "http://127.0.0.1:8843/api/users\?page\=2"
+$ curl -v --header "Host: reqres.in" -X GET "http://127.0.0.1:8080/api/users\?page\=2"
 ```
 # Configuración en Servidor real
 Pasos para configurar servidor definitivo. Se debe agregar los archivos binarios en el servidor que ejecutará el tunnel.
