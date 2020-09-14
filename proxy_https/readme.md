@@ -1,6 +1,7 @@
 Conexión a servidor SSL mediante ghostunnel
 ==========================================
-Pasos para ejecutar prueba de concepto
+# Pasos para ejecutar prueba de concepto
+Pruebas que se pueden ejecutar de forma manual
 
 1. Descargar imagen de un centos antiguo. La imagen de producción es un Red Hat Enterprise Linux Server release 5.3 (Tikanga)
 ```sh
@@ -23,9 +24,9 @@ $ bash-3.2# ./ghostunnel-v1.5.3-linux-amd64-with-pkcs11 client --listen=127.0.0.
 ```sh
 $ curl -v --header "Host: reqres.in" -X GET "http://127.0.0.1:8080/api/users\?page\=2"
 ```
-### Configuración en Servidor real
+# Configuración en Servidor real
 Pasos para configurar servidor definitivo. Se debe agregar los archivos binarios en el servidor que ejecutará el tunnel.
-1.Descargar la aplicación en la ruta ejecutable, agregar el servicio
+1. Descargar la aplicación en la ruta ejecutable, agregar el servicio
 ```sh
 $ wget https://github.com/ghostunnel/ghostunnel/releases/download/v1.5.3/ghostunnel-v1.5.3-linux-amd64-with-pkcs11
 $ cp ghostunnel-v1.5.3-linux-amd64-with-pkcs11 /usr/bin/
